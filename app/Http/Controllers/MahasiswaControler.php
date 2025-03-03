@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PHPUnit\Framework\MockObject\Stub\ReturnReference;
 
 class MahasiswaControler extends Controller
 {
@@ -20,7 +21,9 @@ class MahasiswaControler extends Controller
         });
         //mengambil semua data mahasiswa
         $data=Mahasiswa::all();
-        dd($data);
+       // dd($data);
+       dump($data);
+       return view('mahasiswa.index', compact('data'));
     }
 
     /**

@@ -12,7 +12,19 @@ Route::get('/', function () {
    return view('welcome');
 });
 
-Route::get(uri: '/mahasiswa',action: [MahasiswaControler::class, 'index']);
+Route::get('/mahasiswa',action: [MahasiswaControler::class, 'index']);
+
+Route::get('/Listmahasiswa',function() {
+  $arrmhs=[
+    'agel',
+    'diok',
+    'maspur',
+    'erland'
+  ];
+  return view('akademik.mahasiswa',['mhs'=>$arrmhs]);
+});
+
+Route::view('/hello','hello',['nama'=>'agel']);
 
 route::post('submit', function(){
   return 'data berhasil ditambahkan';
